@@ -141,7 +141,6 @@ public class MainClass {
 				"Additional JAR file that shal be put on the classpath");
 		options.addOption(OPTION_SKIP_APK_FILE, "skipapkfile", true,
 				"APK file to skip when processing a directory of input files");
-
 		// Timeouts
 		options.addOption(OPTION_TIMEOUT, "timeout", true, "Timeout for the main data flow analysis");
 		options.addOption(OPTION_CALLBACK_TIMEOUT, "callbacktimeout", true,
@@ -326,6 +325,7 @@ public class MainClass {
 				}
 
 				// Create the data flow analyzer
+				config.setWriteOutputFiles(true);
 				analyzer = new SetupApplication(config);
 				analyzer.setTaintWrapper(taintWrapper);
 
